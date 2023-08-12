@@ -264,7 +264,7 @@ class Num2Word_Base(object):
         return self.to_cardinal(number)
 
     def _cents_terse(self, number, currency):
-        return "%02d" % number
+        return number
 
     def to_currency(self, val, currency='EUR', cents=True, separator=',',
                     adjective=False):
@@ -294,7 +294,8 @@ class Num2Word_Base(object):
 
         minus_str = "%s " % self.negword.strip() if is_negative else ""
         money_str = self._money_verbose(left, currency)
-        cents_str = self._cents_verbose(right, currency)
+        cents_str = self._cents_verbose(right, currency) \
+            if cents else self._cents_terse(right, currency)
 
         return u'%s%s %s%s %s %s' % (
             minus_str,

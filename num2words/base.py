@@ -297,7 +297,7 @@ class Num2Word_Base(object):
         cents_str = self._cents_verbose(right, currency) \
             if cents else self._cents_terse(right, currency)
 
-        print(cents_str)
+        print(cents, cents_str)
         return u'%s%s %s%s %s %s' % (
             minus_str,
             money_str,

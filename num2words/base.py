@@ -107,6 +107,7 @@ class Num2Word_Base(object):
             return self.to_cardinal_float(value)
 
         out = ""
+        print(f"Value: {value}")
         if value < 0:
             value = abs(value)
             out = "%s " % self.negword.strip()
@@ -130,7 +131,7 @@ class Num2Word_Base(object):
             # rounding), but in cases where we have something like 1.239999999,
             # which is probably due to python's handling of floats, we actually
             # want to consider it as 1.24 instead of 1.23
-            post = int(round(post))
+            post = int(math.floor(post))
         else:
             post = int(math.floor(post))
 
@@ -261,7 +262,7 @@ class Num2Word_Base(object):
         return self.to_cardinal(number)
 
     def _cents_verbose(self, number, currency):
-        return self.to_cardinal_float(number)
+        return self.to_cardinal(number)
 
     def _cents_terse(self, number, currency):
         return self.to_cardinal(number)

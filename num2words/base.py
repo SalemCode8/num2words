@@ -101,6 +101,7 @@ class Num2Word_Base(object):
         return Decimal(value)
 
     def to_cardinal(self, value):
+        print(f"First Value: {value}")
         try:
             assert int(value) == value
         except (ValueError, TypeError, AssertionError):

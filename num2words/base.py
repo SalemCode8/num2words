@@ -294,8 +294,7 @@ class Num2Word_Base(object):
 
         minus_str = "%s " % self.negword.strip() if is_negative else ""
         money_str = self._money_verbose(left, currency)
-        cents_str = self._cents_verbose(right, currency) \
-            if cents else self._cents_terse(right, currency)
+        cents_str = self._cents_verbose(right, currency)
 
         return u'%s%s %s%s %s %s' % (
             minus_str,

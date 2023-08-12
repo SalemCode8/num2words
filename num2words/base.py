@@ -264,7 +264,7 @@ class Num2Word_Base(object):
         return self.to_cardinal(number)
 
     def _cents_terse(self, number, currency):
-        return number
+        return self.to_cardinal(number)
 
     def to_currency(self, val, currency='EUR', cents=True, separator=',',
                     adjective=False):

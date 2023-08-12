@@ -33,10 +33,10 @@ def parse_currency_parts(value, is_int_with_cents=True):
 
     else:
         value = Decimal(value)
-        value = value.quantize(
-            Decimal('.01'),
-            rounding=ROUND_HALF_UP
-        )
+        # value = value.quantize(
+        #     Decimal('.01'),
+        #     rounding=ROUND_HALF_UP
+        # )
         negative = value < 0
         value = abs(value)
         integer, fraction = divmod(value, 1)

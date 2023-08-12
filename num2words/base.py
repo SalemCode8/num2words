@@ -261,7 +261,7 @@ class Num2Word_Base(object):
         return self.to_cardinal(number)
 
     def _cents_verbose(self, number, currency):
-        return self.to_cardinal(number)
+        return self.to_cardinal_float(number)
 
     def _cents_terse(self, number, currency):
         return self.to_cardinal(number)
